@@ -1,0 +1,56 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Lilita One", cursive;
+  font-size: 2rem;
+  text-align: center;
+  background: url(./background.jpg) center center / cover no-repeat;
+}
+
+h1 {
+  font-size: 6rem;
+  color: #e87239;
+  text-shadow: #251f3b 5px 5px 5px;
+}
+
+button {
+  font-family: "Lilita One", cursive;
+  font-size: 3rem;
+  border: 0;
+  background-color: transparent;
+  margin: 1rem 0;
+  color: #eaeaea;
+  text-shadow: #251f3b 5px 5px 5px;
+  cursor: pointer;
+}
+
+.result,
+.score {
+  font-size: 3rem;
+  color: #eaeaea;
+  text-shadow: #251f3b 5px 5px 5px;
+  margin-bottom: 1rem;
+}
+
+.top-buttons {
+  display: flex;
+  justify-content: space-around;
+}
+
+.content {
+  display: flex;
+  justify-content: space-around;
+  padding: 4rem 0;
+  border: 8px solid #251f3b;
+  border-radius: 3rem;
+  color: #eaeaea;
+  text-shadow: #251f3b 5px 5px 5px;
+  font-size: 3rem;
+}
