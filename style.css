@@ -54,3 +54,26 @@ button {
   text-shadow: #251f3b 5px 5px 5px;
   font-size: 3rem;
 }
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 3rem;
+  }
+
+  button {
+    font-size: 2rem;
+    margin: 2rem 0;
+  }
+
+  .result,
+  .score {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .content {
+    font-size: 2rem;
+    padding: 2rem;
+    margin: 0 1rem;
+  }
+}
