@@ -1,31 +1,31 @@
-let rock = document.querySelector(".rock");
-let paper = document.querySelector(".paper");
-let scissors = document.querySelector(".scissors");
-let player = document.querySelector(".player");
-let computer = document.querySelector(".computer");
-let result = document.querySelector(".result");
-let button = document.querySelector(".button");
-let playerScore = document.querySelector(".player-score");
-let computerScore = document.querySelector(".computer-score");
+const rock = document.querySelector(".rock");
+const paper = document.querySelector(".paper");
+const scissors = document.querySelector(".scissors");
+const player = document.querySelector(".player");
+const computer = document.querySelector(".computer");
+const result = document.querySelector(".result");
+const button = document.querySelector(".button");
+const playerScore = document.querySelector(".player-score");
+const computerScore = document.querySelector(".computer-score");
 
-pScore = 0;
-cSCore = 0;
+let pScore = 0;
+let cSCore = 0;
 
 let elemClicked = false;
 let eventBound = true;
 
 function chooseRock() {
-  player.textContent = "Rock";
+  player.innerText = "Rock";
   elemClicked = true;
 }
 
 function choosePaper() {
-  player.textContent = "Paper";
+  player.innerText = "Paper";
   elemClicked = true;
 }
 
 function chooseScissors() {
-  player.textContent = "Scissors";
+  player.innerText = "Scissors";
   elemClicked = true;
 }
 
@@ -35,64 +35,55 @@ paper.addEventListener("click", choosePaper);
 
 scissors.addEventListener("click", chooseScissors);
 
-function computerChoise() {
-  return Math.floor(Math.random() * 3 + 1);
+function computerChoice() {
+  return Math.floor(Math.random() * 3);
 }
 
 function buttonTrigger() {
   let message = "";
 
   if (elemClicked) {
-    if (computerChoise() == 1) {
-      computer.textContent = "Rock";
+    if (computerChoice() == 0) {
+      computer.innerText = "Rock";
       elemClicked = false;
-    } else if (computerChoise() == 2) {
-      computer.textContent = "Paper";
+    } else if (computerChoice() == 1) {
+      computer.innerText = "Paper";
       elemClicked = false;
     } else {
-      computer.textContent = "Scissors";
+      computer.innerText = "Scissors";
       elemClicked = false;
     }
 
-    if (player.textContent == "Rock" && computer.textContent == "Paper") {
-      result.textContent = "Computer win!!!";
+    if (player.innerText == "Rock" && computer.innerText == "Paper") {
+      result.innerText = "Computer win!!!";
       cSCore++;
-    } else if (
-      player.textContent == "Rock" &&
-      computer.textContent == "Scissors"
-    ) {
-      result.textContent = "You win!!!";
+    } else if (player.innerText == "Rock" && computer.innerText == "Scissors") {
+      result.innerText = "You win!!!";
+      pScore++;
+    } else if (player.innerText == "Paper" && computer.innerText == "Rock") {
+      result.innerText = "You win!!!";
       pScore++;
     } else if (
-      player.textContent == "Paper" &&
-      computer.textContent == "Rock"
+      player.innerText == "Paper" &&
+      computer.innerText == "Scissors"
     ) {
-      result.textContent = "You win!!!";
-      pScore++;
-    } else if (
-      player.textContent == "Paper" &&
-      computer.textContent == "Scissors"
-    ) {
-      result.textContent = "Computer wins!!!";
+      result.innerText = "Computer wins!!!";
+      cSCore++;
+    } else if (player.innerText == "Scissors" && computer.innerText == "Rock") {
+      result.innerText = "Computer wins!!!";
       cSCore++;
     } else if (
-      player.textContent == "Scissors" &&
-      computer.textContent == "Rock"
+      player.innerText == "Scissors" &&
+      computer.innerText == "Paper"
     ) {
-      result.textContent = "Computer wins!!!";
-      cSCore++;
-    } else if (
-      player.textContent == "Scissors" &&
-      computer.textContent == "Paper"
-    ) {
-      result.textContent = "You win!!!";
+      result.innerText = "You win!!!";
       pScore++;
     } else {
-      result.textContent = "it's a draw!!!";
+      result.innerText = "it's a draw!!!";
     }
   }
 
-  if (player.textContent == "Player") {
+  if (player.innerText == "Player") {
     eventBound = false;
   }
 
@@ -105,17 +96,17 @@ function buttonTrigger() {
   } else if (eventBound == false) {
     eventBound = true;
     message = "Submit";
-    player.textContent = "Player";
-    computer.textContent = "Computer";
-    result.textContent = "Result";
+    player.innerText = "Player";
+    computer.innerText = "Computer";
+    result.innerText = "Result";
     rock.addEventListener("click", chooseRock);
     paper.addEventListener("click", choosePaper);
     scissors.addEventListener("click", chooseScissors);
   }
 
-  button.textContent = message;
-  playerScore.textContent = pScore;
-  computerScore.textContent = cSCore;
+  button.innerText = message;
+  playerScore.innerText = pScore;
+  computerScore.innerText = cSCore;
 }
 
 button.addEventListener("click", buttonTrigger);
