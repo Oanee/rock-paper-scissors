@@ -10,8 +10,9 @@ const computerScore = document.querySelector(".computer-score");
 
 const start = document.querySelector(".start");
 const game = document.querySelector(".game");
-const playerName = document.querySelector(".player-name").value;
+const playerName = document.querySelector(".player-name");
 let comment = document.querySelector(".comment");
+let playerNameUppercase = "";
 
 let pScore = 0;
 let cSCore = 0;
@@ -20,15 +21,17 @@ let elemClicked = false;
 let eventBound = true;
 
 start.addEventListener("click", (e) => {
-  if (playerName == "") {
+  if (playerName.value == "") {
     comment.innerText = "I would like to know your name";
-  } else if (isNaN(playerName) == false) {
+  } else if (isNaN(playerName.value) == false) {
     comment.innerText = "I say your name not your age";
-  } else if (playerName != "") {
+  } else if (playerName.value != "") {
     e.target.style.display = "none";
     playerName.style.display = "none";
     game.style.display = "block";
     comment.style.display = "none";
+    playerNameUppercase =
+      playerName.value.charAt().toUpperCase() + playerName.value.slice(1);
   }
 });
 
@@ -76,10 +79,10 @@ function buttonTrigger() {
       result.innerText = "Computer win!!!";
       cSCore++;
     } else if (player.innerText == "Rock" && computer.innerText == "Scissors") {
-      result.innerText = "You win!!!";
+      result.innerText = `Good job ${playerNameUppercase}!!!`;
       pScore++;
     } else if (player.innerText == "Paper" && computer.innerText == "Rock") {
-      result.innerText = "You win!!!";
+      result.innerText = `Good job ${playerNameUppercase}!!!`;
       pScore++;
     } else if (
       player.innerText == "Paper" &&
@@ -94,7 +97,7 @@ function buttonTrigger() {
       player.innerText == "Scissors" &&
       computer.innerText == "Paper"
     ) {
-      result.innerText = "You win!!!";
+      result.innerText = `Good job ${playerNameUppercase}!!!`;
       pScore++;
     } else {
       result.innerText = "it's a draw!!!";
