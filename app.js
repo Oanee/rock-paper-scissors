@@ -8,11 +8,29 @@ const button = document.querySelector(".button");
 const playerScore = document.querySelector(".player-score");
 const computerScore = document.querySelector(".computer-score");
 
+const start = document.querySelector(".start");
+const game = document.querySelector(".game");
+const playerName = document.querySelector(".player-name").value;
+let comment = document.querySelector(".comment");
+
 let pScore = 0;
 let cSCore = 0;
 
 let elemClicked = false;
 let eventBound = true;
+
+start.addEventListener("click", (e) => {
+  if (playerName == "") {
+    comment.innerText = "I would like to know your name";
+  } else if (isNaN(playerName) == false) {
+    comment.innerText = "I say your name not your age";
+  } else if (playerName != "") {
+    e.target.style.display = "none";
+    playerName.style.display = "none";
+    game.style.display = "block";
+    comment.style.display = "none";
+  }
+});
 
 function chooseRock() {
   player.innerText = "Rock";

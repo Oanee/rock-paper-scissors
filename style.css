@@ -20,6 +20,53 @@ h1 {
   text-shadow: #251f3b 5px 5px 5px;
 }
 
+.game {
+  display: none;
+}
+
+.start-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.start {
+  font-size: 4rem;
+  margin: 4rem 0;
+}
+
+.player-name {
+  width: 20rem;
+  height: 2rem;
+  background: none;
+  border: none;
+  border-bottom: 8px solid #251f3b;
+  text-shadow: #251f3b 5px 5px 5px;
+  margin-bottom: 4rem;
+  color: #eaeaea;
+  font-size: 2rem;
+  text-align: center;
+  outline: none;
+  font-family: "Lilita One", cursive;
+}
+
+.player-name::placeholder {
+  font-size: 2rem;
+  color: #eaeaea;
+  text-align: center;
+}
+
+.player-name:focus::placeholder {
+  color: transparent;
+  text-shadow: none;
+}
+
+.comment {
+  color: #eaeaea;
+  text-shadow: #251f3b 5px 5px 5px;
+}
+
 button {
   font-family: "Lilita One", cursive;
   font-size: 3rem;
@@ -57,6 +104,10 @@ button {
 
 @media (max-width: 768px) {
   h1 {
+    font-size: 3rem;
+  }
+
+  .start {
     font-size: 3rem;
   }
 

@@ -17,25 +17,34 @@
     <div class="rock-paper-scissors">
       <h1>Rock Paper Scissors</h1>
 
-      <div class="top-buttons">
-        <button class="rock">Rock</button>
-        <button class="paper">Paper</button>
-        <button class="scissors">Scissors</button>
+      <form class="start-page" onsubmit="return false">
+        <button class="start">Start</button>
+        <input type="text" class="player-name" placeholder="Input your name" />
+      </form>
+
+      <p class="comment"></p>
+
+      <div class="game">
+        <div class="top-buttons">
+          <button class="rock">Rock</button>
+          <button class="paper">Paper</button>
+          <button class="scissors">Scissors</button>
+        </div>
+        <div class="content">
+          <p class="player">Player</p>
+
+          <p class="computer">Computer</p>
+        </div>
+
+        <button class="button">Submit</button>
+
+        <p class="result">Result</p>
+
+        <p class="score">
+          Score <span class="player-score">0</span> -
+          <span class="computer-score">0</span>
+        </p>
       </div>
-      <div class="content">
-        <p class="player">Player</p>
-
-        <p class="computer">Computer</p>
-      </div>
-
-      <button class="button">Submit</button>
-
-      <p class="result">Result</p>
-
-      <p class="score">
-        Score <span class="player-score">0</span> -
-        <span class="computer-score">0</span>
-      </p>
     </div>
 
     <script src="app.js"></script>
